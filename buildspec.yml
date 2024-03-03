@@ -41,15 +41,16 @@ phases:
       - wget https://download.docker.com/linux/ubuntu/dists/jammy/pool/stable/amd64/docker-buildx-plugin_0.12.1-1~ubuntu.22.04~jammy_amd64.deb
       - #wget https://download.docker.com/linux/ubuntu/dists/jammy/pool/stable/amd64/docker-ce-cli_25.0.3-1~ubuntu~jammy.amd64.deb
       - wget https://download.docker.com/linux/ubuntu/dists/jammy/pool/stable/amd64/docker-ce-cli_25.0.3-1~ubuntu.22.04~jammy_amd64.deb
-      - wget https://download.docker.com/linux/ubuntu/dists/jammy/pool/stable/amd64/docker-ce-rootless-extras_25.0.3-1~ubuntu.22-04~jammy_amd64.deb
+      - #wget https://download.docker.com/linux/ubuntu/dists/jammy/pool/stable/amd64/docker-ce-rootless-extras_25.0.3-1~ubuntu.22-04~jammy_amd64.deb
+      - wget https://download.docker.com/linux/ubuntu/dists/jammy/pool/stable/amd64/docker-ce-rootless-extras_25.0.3-1~ubuntu.22.04~jammy_amd64.deb
       - wget https://download.docker.com/linux/ubuntu/dists/jammy/pool/stable/amd64/docker-ce.25.0.3-1~ubuntu.22.04~jammy_amd64.deb
-      - wget https://download.docker.com/linux/ubuntu/dists/jammy/pool/stable/amd64/docker-compose-plugin_2.24.6-1~ubuntu.2204~jammy_amd64.deb
+      - wget https://download.docker.com/linux/ubuntu/dists/jammy/pool/stable/amd64/docker-compose-plugin_2.24.6-1~ubuntu.22.04~jammy_amd64.deb
       - wget https://download.docker.com/linux/ubuntu/dists/jammy/pool/stable/amd64/docker-scan-plugin_0.23.0~ubuntu-jammy_amd64.deb
       - dpkg -i containerd.io_1.6.28-1_amd64.deb
       - dpkg -i docker-ce_25.0.3-1~ubuntu.22.04~jammy_amd64.deb
       - dpkg -i docker-ce-cli_25.0.3-1~ubuntu.22.04~jammy_amd64.deb
-      - dpkg -i docker-ce-rootless-extras_2.0.3-1~ubuntu.22.04~jammy_amd64.deb
-      - dpkg -i docker-compose-plugin_2..0~ubuntu-jammy_amd64.deb
+      - dpkg -i docker-ce-rootless-extras_25.0.3-1~ubuntu.22.04~jammy_amd64.deb
+      - dpkg -i docker-compose-plugin_2.24.6-1~ubuntu.22.04-jammy_amd64.deb
       - dpkg -i docker-buildx-plugin_0.12.1-1~ubuntu.22.04~jammy_amd64.deb
       - docker run hello-world
       - echo installing AWS CLI
