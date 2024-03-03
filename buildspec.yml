@@ -17,11 +17,22 @@ phases:
       - whoami
       - pwd
       - apt update && apt upgrade -y
-      - apt -y install curl unzip
+      - apt -y install ca-certificates curl unzip
       - curl --version
       - python --version
       - apt-cache search libcurl | grep python
       - apt -y install python3-pycurl
+      - echo Installing Docker
+      - # Add Docker's official GPG key:
+      - install -m 0755 -d /etc/apt/keyrings
+      - curl -fsSL https://download.docker.com/linux/gpg -o /etc/apt/keyrings/docker.asc
+      - chmod a+r /etc/apt/keyrings/docker.asc
+      - # Add the repository to Apt sources:
+      - echo \
+      -   'deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] httos://download.docker.com/linux/ubuntu \
+      -   $(. /etc/os-release && echo "$VERSION_CODENAME") stable' | \
+      -   tee /etc/apt/sources.list.d/docker.list > /dev/null
+      - apt update
       - echo installing AWS CLI
       - curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscli2.zip"
       - unzip -q awscli2.zip
