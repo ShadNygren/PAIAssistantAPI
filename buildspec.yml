@@ -32,10 +32,23 @@ phases:
       - #echo 'deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu  $(. /etc/os-release && echo "$VERSION_CODENAME") stable' | tee /etc/apt/sources.list.d/docker.list > /dev/null
       - #echo 'deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(. /etc/os-release && echo "$VERSION_CODENAME") stable' | tee /etc/apt/sources.list.d/docker.list > /dev/null
       - #echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu/jammy/stable" | tee /etc/apt/sources.list.d/docker.list > /dev/null
-      - echo "deb [arch=$(dpkg --print-architecture)] https://download.docker.com/linux/ubuntu/dists/jammy/stable" | tee /etc/apt/sources.list.d/docker.list > /dev/null
-      - cat /etc/apt/sources.list.d/docker.list
-      - apt update
-      - apt -y install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+      - #echo "deb [arch=$(dpkg --print-architecture)] https://download.docker.com/linux/ubuntu/dists/jammy/stable" | tee /etc/apt/sources.list.d/docker.list > /dev/null
+      - #cat /etc/apt/sources.list.d/docker.list
+      - #apt update
+      - #apt -y install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+      - wget https://download.docker.com/linux/ubuntu/dists/jammy/pool/stable/amd64/containerd.io.1.6.28-1.amd4.deb
+      - wget https://download.docker.com/linux/ubuntu/dists/jammy/pool/stable/amd64/docker-buildx-plugin_0.12.1-1~ubuntu.22.04~jammy_amd4.deb
+      - wget https://download.docker.com/linux/ubuntu/dists/jammy/pool/stable/amd64/docker-ce-cli_25.0.3-1~ubuntu~jammy.amd4.deb
+      - wget https://download.docker.com/linux/ubuntu/dists/jammy/pool/stable/amd64/docker-ce-rootless-extras_25.0.3-1~ubuntu.22-04~jammy_amd4.deb
+      - wget https://download.docker.com/linux/ubuntu/dists/jammy/pool/stable/amd64/docker-ce.25.0.3-1~ubuntu.22.04~jammy_amd4.deb
+      - wget https://download.docker.com/linux/ubuntu/dists/jammy/pool/stable/amd64/docker-compose-plugin_2.24.6-1~ubuntu.2204~jammy_amd4.deb
+      - wget https://download.docker.com/linux/ubuntu/dists/jammy/pool/stable/amd64/docker-scan-plugin_0.23.0~ubuntu-jammy_amd4.deb
+      - dpkg -i containerd.io.1.6.28-1.amd4.deb
+      - dpkg -i docker-ce_25.0.3-1~ubuntu.22.04~jammy_amd4.deb
+      - dpkg -i docker-ce-cli_25.0.3-1~ubuntu.22.04~jammy_amd.deb
+      - dpkg -i docker-ce-rootless-extras_2.0.3-1~ubuntu.22.04~jammy_amd4.deb
+      - dpkg -i docker-compose-plugin_2..0~ubuntu-jammy_amd64.deb
+      - dpkg -i docker-buildx-plugin_0.12.1-1~ubuntu.22.04~jammy_amd4.deb
       - docker run hello-world
       - echo installing AWS CLI
       - curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscli2.zip"
