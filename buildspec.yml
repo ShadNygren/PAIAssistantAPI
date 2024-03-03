@@ -16,7 +16,7 @@ phases:
       - uname -a
       - whoami
       - pwd
-      - apt update && apt upgrade
+      - apt update && apt upgrade -y
       - apt -y install curl
       - curl --version
       - python version
