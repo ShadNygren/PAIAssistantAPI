@@ -14,6 +14,7 @@ phases:
     commands:
       - cat /etc/issue
       - uname -a
+      - sudo apt-get -y install curl
       - echo installing AWS CLI
       - curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscli2.zip"
       - unzip -q awscli2.zip
