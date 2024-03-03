@@ -19,7 +19,7 @@ phases:
       - apt update && apt upgrade -y
       - apt -y install curl
       - curl --version
-      - python version
+      - python --version
       - apt-cache search libcurl | grep python
       - apt install python3-pycurl
       - echo installing AWS CLI
