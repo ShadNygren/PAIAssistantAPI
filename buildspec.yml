@@ -16,7 +16,12 @@ phases:
       - uname -a
       - whoami
       - pwd
-      - apt-get -y install curl
+      - apt update && apt upgrade
+      - apt -y install curl
+      - curl --version
+      - python version
+      - apt-cache search libcurl | grep python
+      - apt install python3-pycurl
       - echo installing AWS CLI
       - curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscli2.zip"
       - unzip -q awscli2.zip
