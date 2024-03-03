@@ -17,7 +17,7 @@ phases:
       - whoami
       - pwd
       - apt update && apt upgrade -y
-      - apt -y install curl
+      - apt -y install curl unzip
       - curl --version
       - python --version
       - apt-cache search libcurl | grep python
