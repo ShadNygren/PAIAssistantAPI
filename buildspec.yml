@@ -16,11 +16,11 @@ phases:
       - uname -a
       - whoami
       - pwd
-      - sudo apt-get -y install curl
+      - apt-get -y install curl
       - echo installing AWS CLI
       - curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscli2.zip"
       - unzip -q awscli2.zip
-      - sudo ./aws/install
+      - ./aws/install
   pre_build:
     commands:
       - echo Logging in to Amazon ECR...
