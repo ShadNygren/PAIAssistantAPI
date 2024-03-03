@@ -17,7 +17,7 @@ phases:
       - whoami
       - pwd
       - apt update && apt upgrade -y
-      - apt -y install ca-certificates curl unzip
+      - apt -y install ca-certificates curl unzip gnupg
       - curl --version
       - python --version
       - apt-cache search libcurl | grep python
