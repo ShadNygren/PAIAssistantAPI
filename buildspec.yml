@@ -53,6 +53,9 @@ phases:
       - dpkg -i docker-ce-rootless-extras_25.0.3-1~ubuntu.22.04~jammy_amd64.deb
       - dpkg -i docker-compose-plugin_2.24.6-1~ubuntu.22.04~jammy_amd64.deb
       - dpkg -i docker-buildx-plugin_0.12.1-1~ubuntu.22.04~jammy_amd64.deb
+      - systemctl start docker
+      - systemctl enable docker
+      - systemctl status docker
       - docker run hello-world
       - echo installing AWS CLI
       - curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscli2.zip"
