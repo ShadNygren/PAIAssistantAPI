@@ -2,7 +2,7 @@ version: 0.2
 
 env:
   variables:
-    IMAGE_REPO_NAME: "aws-docker-PAIAssistantAPI"
+    IMAGE_REPO_NAME: "paiassistantapi"
     IMAGE_TAG: "experimental"
     AWS_ACCOUNT_ID: "365024520127"
     AWS_DEFAULT_REGION: "us-west-2"
